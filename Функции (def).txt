@@ -1,0 +1,26 @@
+def count_vowels(string):
+    vowels = ['a', 'e', 'i', 'o', 'u']
+    count = 0
+    for letter in string:
+        if letter in vowels:
+            count += 1
+
+    return count
+
+print(count_vowels("Hello")) #2
+print(count_vowels("Hello World")) #3
+---------------------------------------------------------
+
+def format_date(*,day :int, month: str, year :int):
+    return f"Я родился {day}(ого), {month}, {year}"
+
+
+print(format_date(day=5,month='September', year=2022)) #Я родился 5(ого), September, 2022
+--------------------------------------------------------------------------------------------
+
+def add(*,name:str, greeting:str="Hello"):
+    return f"{name} {greeting}"
+
+print(add(name="Jhon",greeting="Privet")) #Jhon Privet
+
+print(add(name="Jhon")) #Jhon Hello
