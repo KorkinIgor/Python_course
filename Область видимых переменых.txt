@@ -1,0 +1,41 @@
+car = "mers"
+
+
+def NewCar():
+    car = "bmw"
+    print(car) #bmw
+
+
+NewCar()
+print(car) #mers
+-------------------------------------------------------
+global_var = "самолет"
+
+
+def MyFunction():
+    global global_var
+    global_var = "паровоз"
+
+
+print(global_var)
+MyFunction()
+print(global_var)
+------------------------------------------------------------
+levelNext = 100
+
+
+def LevelUpdate(*, currentLevel: int, gaintetLelev: int) -> bool:
+    levelChek = currentLevel + gaintetLelev
+    levelNextStatus = False
+
+    if levelNext <= levelChek:
+        levelNextStatus = True
+
+    return levelNextStatus
+
+
+print(LevelUpdate(currentLevel=60, gaintetLelev=50))  #True
+print(LevelUpdate(currentLevel=10, gaintetLelev=50))  #False
+
+
+
