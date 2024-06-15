@@ -1,0 +1,5 @@
+def multiplication(*,a:int = 0,b:int = 0)->int:
+   print(f"Ответ: {a * b}")
+   return a,b
+
+multiplication(a = int(input()), b = int(input()))
