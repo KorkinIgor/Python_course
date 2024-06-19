@@ -1,0 +1,39 @@
+number = 1
+
+while number <= 5:
+    print(number)
+    number += 1
+
+Consol: 1
+        2
+        3
+        4
+        5
+------------------------
+while True:
+    print("Infinite loop!")  #Бессконечный цикл
+-----------------------------------------------
+import random
+
+FLORIDA = "florida"
+EDMOTON = "edmonton"
+
+CHOICES = [FLORIDA, EDMOTON]
+
+
+def stavka(*, game: int = 1):
+    while game <= 7:
+        game += 1
+        print(random.choice(CHOICES))
+
+
+stavka()
+
+Consol: florida
+        edmonton
+        edmonton
+        edmonton
+        florida
+        edmonton
+        edmonton
+-------------------------------------------------
