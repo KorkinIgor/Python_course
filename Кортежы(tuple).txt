@@ -1,0 +1,20 @@
+car = ("mers", "lada", "bmw")  #tuple
+
+not_tuplee = ("mers")
+print(type(not_tuplee))  #<class 'str'>
+
+tuplee2 = ("mers",)
+print(type(tuplee2))  #<class 'tuple'>
+-----------------------------------------------
+
+car = ("mers", "bmw", "lada")
+
+car[1] = "hhh"  #ERROR
+
+print(car[1])
+
+В кортежах нельзя изменять значение элементов.
+----------------------------------------------------
+
+
+
