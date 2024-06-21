@@ -1,0 +1,135 @@
+person = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin"
+}
+
+print(person["surname"])  #Korkin
+---------------------------------------------------------------------------
+person = {}
+
+person['name'] = "Igor"
+person['family'] = "Korkin"
+person['age'] = 15
+
+print(person)  #{'name': 'Igor', 'family': 'Korkin', 'age': 15}
+---------------------------------------------------------------------------
+person = {
+ "name": "Igor",
+ "age": 15,
+ "surname": "Korkin",
+}
+
+person["city"] = "Omsk"
+
+print(person)  #{'name': 'Igor', 'age': 15, 'surname': 'Korkin', 'city': 'Omsk'}
+----------------------------------------------------------------------------------
+person = {
+ "name": "Igor",
+ "age": 15,
+ "surname": "Korkin",
+}
+
+for item in person.items():
+ print(item)
+ print(type(item))
+
+Consol:
+       ('name', 'Igor')
+       <class 'tuple'>
+       ('age', 15)
+       <class 'tuple'>
+       ('surname', 'Korkin')
+       <class 'tuple'>
+---------------------------------------------------------------------------------------
+person = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin",
+}
+
+for key, value in person.items():
+    print(f"{key}: {value}")
+
+Consol:
+       name: Igor
+       age: 15
+       surname: Korkin
+------------------------------------------------------------------------------------
+person = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin",
+}
+
+for key in person.keys():
+    print(key)
+
+Consol:
+       name
+       age
+       surname
+----------------------------------------------------------------------------------------
+personZ = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin"
+}
+personV = {
+    "age": 15,
+    "surname": "Korkin",
+    "name": "Igor"
+}
+print(personZ == personV)  #True
+
+#Для сравнение словарей, распорядок ключей не важен
+------------------------------------------------------------------------------------------
+personZ = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin"
+}
+personV = {
+    "Money": 10000,
+    "House": "Flat",
+    "Team": "Red"
+}
+
+person = dict(personZ, **personV)  #Объединяем словари
+
+print(person)  #{'name': 'Igor', 'age': 15, 'surname': 'Korkin', 'Money': 10000, 'House': 'Flat', 'Team': 'Red'}
+-------------------------------------------------------------------------------------------------------------------
+personZ = {
+    "name": "Igor",
+    "age": 15,
+    "surname": "Korkin"
+}
+personV = {
+    "name": "Vadim",
+    "Money": 10000,
+    "House": "Flat",
+}
+
+personZ = personZ | personV #Объединяем словари
+
+print(personZ)  #{'name': 'Vadim', 'age': 15, 'surname': 'Korkin', 'Money': 10000, 'House': 'Flat'}
+--------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
