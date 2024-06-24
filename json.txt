@@ -1,0 +1,28 @@
+JSON — это текстовый формат обмена данными, основанный на JavaScript.JSON — это текстовый формат обмена данными, основанный на JavaScript.
+---------------------------------------------------------------------------------
+import json
+
+person = {
+    'name': 'Igor',
+    'age': 25,
+    'famyle': 'Korkin',
+    'town': 'Omsk'
+}
+
+json_string = json.dumps(person)  #Запаковка json файла
+
+
+print(json_string)  #{"name": "Igor", "age": 25, "famyle": "Korkin", "town": "Omsk"}
+print(type(json_string))  #<class 'str'>
+-------------------------------------------------------------------------------------
+import json
+
+
+json_string = '{"fruit": "Apple", "size": "Large", "color": "Red"}'
+
+book = json.loads(json_string)  #Распаковка json файла
+
+
+print(book)
+print(type(book))
+-------------------------------------------------------------------------------------
