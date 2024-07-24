@@ -1,0 +1,26 @@
+Лямбда-выражения в языке Python представляют небольшие анонимные функции, которые определяются с помощью оператора lambda.
+-------------------------------------------------------------------------------------------------------------------------------
+def sortByLen(element: str) -> int:
+    return len(element)
+
+
+sortByLenLambda = lambda element: len(element)
+
+print(sortByLen('Banana'))  #6
+
+print(sortByLenLambda('Banana'))  #6
+------------------------------------------------------------------------------------------------------------------------
+fruits = ['cheiry', 'banana', 'aple', 'sok']
+
+new_fruits = sorted(fruits, key=lambda element: len(element))
+
+print(new_fruits)  #['sok', 'aple', 'cheiry', 'banana']
+---------------------------------------------------------------------------------------------------------------------------
+fruits = ['chery', 'banana', 'aple', 'sok']
+
+new_fruits = max(fruits, key=lambda elemnt: len(elemnt))
+
+print(new_fruits)  #banana
+
+
+
