@@ -1,0 +1,15 @@
+import random
+print_count = int(input("загадайте число: "))
+i: int = random.randint(1, 100)
+
+
+for a in range(10):
+    if print_count > i:
+        print("меньше")
+        print_count = int(input("загадайте число: "))
+    if print_count < i:
+        print("больше")
+        print_count = int(input("загадайте число: "))
+    if print_count == i:
+        print("Урааа")
+        break
