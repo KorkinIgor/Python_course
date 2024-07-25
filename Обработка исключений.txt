@@ -1,0 +1,22 @@
+Обработка исключений в Python осуществляется с помощью блоков try и except.
+----------------------------------------------------------------------------
+def find_averga(*, numbers: list) -> float:
+    return sum(numbers) / len(numbers)
+
+try:
+    print(find_averga(numbers=[]))
+except ZeroDivisionError:
+    print("ошибка")  #ошибка
+
+print("привет")  #привет
+------------------------------------------------------------------------------
+def find_averga(*, numbers: list) -> float:
+    return sum(numbers) / len(numbers)
+
+try:
+    print(find_averga(numbers=[1, 2, 3, 4, 5]))
+except ZeroDivisionError:
+    print("ошибка")
+
+print("привет")  #привет
+------------------------------------------------------------------------------
