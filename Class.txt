@@ -1,0 +1,62 @@
+class Ork:
+    cars = ["mers", "bmw", "ferrari"]
+
+
+pass
+
+new_Ork = Ork()  #Экзэмпляр класса
+
+print(new_Ork.cars[1])  #bmw
+
+
+#В данной задачи, мы добрались до элемента списка, который был в классе
+
+
+Объект — это экземпляр класса. Класс можно сравнить с чертежом, по которому создаются объекты.
+----------------------------------------------------------------------------
+class Ork:
+    def __init__(self, level: int) -> None:
+        self.level = level
+
+
+ork = Ork(level=5)
+print(ork.level)  #5
+
+
+#init — это специальная функция, которая вызывается при создании нового объекта класса. Она также известна как конструктор класса.
+
+
+#self - это ключевое слово, которое отвечает за создание экзэмпляра класса.
+-------------------------------------------------------------------------------
+class Ork:
+    def __init__(self, level: int) -> None:
+        self.level = level
+        self.health = 100 * level
+        self.attack_power = 100 * level
+
+    def attack(self):
+        print(f"Боец бьет сильно {self.attack_power} силы")  #Боец бьет 500 силы
+
+
+ork = Ork(level=5)
+print(ork.attack_power)  #500
+
+ork.attack()
+----------------------------------------------------------------------------------------
+class Ork:
+    def __init__(self, level: int) -> None:
+        self.level = level
+        self.health = 100 * level
+        self.attack_power = 100 * level
+
+
+ork = Ork(level=5)
+
+ork.level += 1
+
+print(ork.level)  #6
+
+
+
+
+
