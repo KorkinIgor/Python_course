@@ -1,0 +1,32 @@
+Наследование позволяет создавать новый класс на основе уже существующего класса.
+---------------------------------------------------------------------------------
+class Character:
+    def __init__(self, level: int) -> None:
+        self.level = level
+        self.health = self.base_hp * level
+        self.attack_power = self.base_attack * level
+
+    def attack(self):
+        print(f"Боец бьет сильно {self.attack_power} силы")  #Боец бьет сильно 50 силы
+
+    def __str__(self):
+        return f"{self.charecter_name}, (level {self.level}), (attack {self.attack_power})"  #Ork, (level 5), (attack 50)
+
+
+class Ork(Character):
+    base_hp = 100
+    base_attack = 10
+    charecter_name = "Ork"
+
+
+new_ork = Ork(level=5)
+new_ork.attack()
+
+print(new_ork)
+
+
+#__str__(self) — метод, который определяет строковое представление объекта.
+
+Этот метод полезен, если нужно красиво вывести информацию об объекте на экран.
+-------------------------------------------------------------------------------------------------------
+
