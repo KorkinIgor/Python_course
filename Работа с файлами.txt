@@ -1,0 +1,52 @@
+import json
+
+js_file = {'name': 'Igor', 'age': 15, 'city': 'Omsk'}
+
+file = open('Files/js_file.json', 'w')
+
+json.dump(js_file, file, indent=4)  #indent отвечает за количество строк, в открываемом файле
+
+
+Files.js_file:
+{
+    "name": "Igor",
+    "age": 15,
+    "city": "Omsk"
+}
+-----------------------------------------------------------------------------------------------
+import json
+
+file = open('Files/js_file.json', 'r')
+
+file_load = json.load(file)
+
+
+file.close()
+print(file_load)  #{'name': 'Igor', 'age': 15, 'city': 'Omsk'}
+--------------------------------------------------------------------------------------------------
+#CSV (Comma Separated Values) — это формат данных, в котором значения разделены запятыми. Он часто используется для хранения табличных данных и обмена информацией между различными системами.
+
+
+
+
+
+import csv
+
+people = [
+    {'name': 'Alex', 'age': 16},
+    {'name': 'Oleg', 'age': 25},
+    {'name': 'Igor', 'age': 30},
+    {'name': 'Grisha', 'age': 21}
+]
+
+file = open('Files/persons.csv', 'w')
+
+csv_writer = csv.writer(file)
+csv_writer.writerow(people)
+
+file.close()
+
+
+persons.csv: "{'name': 'Alex', 'age': 16}","{'name': 'Oleg', 'age': 25}","{'name': 'Igor', 'age': 30}","{'name': 'Grisha', 'age': 21}"
+------------------------------------------------------------------------------------------------------
+
