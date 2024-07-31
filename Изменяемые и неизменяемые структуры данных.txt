@@ -1,0 +1,88 @@
+Неизменяемые типы данных:int, str, float, tuple, bool, None и другие
+Изменяемые типы данных: list, dict, set
+
+
+--------------------------------------------------------------------------------------------------------------
+x = 50
+y = x
+
+print(id(x), id(y), x, y)  #140734190145496 140734190145496 50 50
+y += 1
+print(id(x), id(y), x, y)  #140734190145496 140734190145528 50 51
+
+
+#Функция id() в Python возвращает уникальный идентификатор переданного ей в качестве аргумента объекта.
+------------------------------------------------------------------------------------------------------
+my_list = [1, 2, 3]
+another_list = my_list
+
+print(id(my_list), id(another_list), my_list, another_list)  #2063463272832 2063463272832 [1, 2, 3] [1, 2, 3]
+
+another_list.append(4)
+
+print(id(my_list), id(another_list), my_list, another_list)  #2063463272832 2063463272832 [1, 2, 3, 4] [1, 2, 3, 4]
+------------------------------------------------------------------------------------------------------------------------
+a = None
+b = None
+
+
+print(a is b)  #True
+
+
+#is проверяет, относятся ли переменные к одной ячейки памяти.
+-----------------------------------------------------------------
+my_dict = {'x': 1, 'y': 2}
+another_dict = my_dict.copy()
+
+another_dict['x'] = 100
+
+print(my_dict, another_dict)  #{'x': 1, 'y': 2} {'x': 100, 'y': 2}
+print(id(my_dict), id(another_dict))  #2647838876800 2647835783232
+-----------------------------------------------------------------------
+patient_data = {'puls': [60, 61, 63, 61]}
+patient_data_copy = patient_data.copy()
+
+patient_data_copy['puls'].append(65)
+
+print(patient_data)  #{'puls': [60, 61, 63, 61, 65]}
+print(patient_data_copy)  #{'puls': [60, 61, 63, 61, 65]}
+---------------------------------------------------------------------------
+from copy import deepcopy
+
+
+patient_data = {'puls': [60, 61, 63, 61]}
+patient_data_copy = deepcopy(patient_data)
+
+patient_data_copy['puls'].append(65)
+
+print(patient_data)  #{'puls': [60, 61, 63, 61]}
+print(patient_data_copy)  #{'puls': [60, 61, 63, 61, 65]}
+---------------------------------------------------------------------------
+from copy import deepcopy
+
+
+def function_with_computation(*, lst: list[int]):
+    lst.clear()
+
+
+my_list = [1, 2, 3, 4]
+
+function_with_computation(lst=deepcopy(my_list))
+
+print(my_list)  #[1, 2, 3, 4]
+-----------------------------------------------------------------------------
+def func_append_element(*, element: int, lst: list = None):
+    if lst is None:
+        lst = []
+    lst.append(element)
+    return lst
+
+
+my_list = func_append_element(element=1)
+print(my_list)  #[1]
+another_list = func_append_element(element=2)
+print(another_list)  #[2]
+
+
+
+
