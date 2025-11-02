@@ -1,0 +1,21 @@
+import sqlite3
+
+db = sqlite3.connect("st_dvorik.db")  #создаем, и подключаемся к базе данных
+cur = db.cursor()  #создаем cursor
+
+#cur.execute("DELETE FROM articles")
+cur.execute("CREATE TABLE IF NOT EXISTS articles (title text,full_text text,views integer, avtor text)")  #прописываем команду, и сразу выполняем
+cur.execute(f"INSERT INTO articles VALUES('Бугага', 'круто круто', 555, 'admin')")
+cur.execute(f"INSERT INTO articles VALUES('tttt', 'крут444 круто', 1455, 'a666dmin')")
+
+cur.execute("UPDATE articles SET avtor = 'Сигма' WHERE title <> 'Сигма'")
+cur.execute("SELECT * FROM articles WHERE rowid = 2")
+
+item = cur.fetchall()  #Выбираем данные
+#print(cur.fetchmany(1))
+#print(cur.fetchone())
+print(item)
+
+db.commit()  #Обновление базы данных
+
+db.close()  #закрываем базу данных(обязательно)
